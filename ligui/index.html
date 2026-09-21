@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丽柜-高端定制衣柜与整体家居解决方案</title>
+    <meta name="description" content="丽柜提供专业的高端定制衣柜、衣帽间及整体家居解决方案。涵盖现代简约、北欧、轻奢等多种风格，提供免费上门测量、设计及安装服务。">
+    <meta name="keywords" content="丽柜,定制衣柜,整体衣柜,衣帽间,全屋定制,高端家具">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B5E3C;
+            --secondary-color: #F5F2EA;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --white: #ffffff;
+            --border-color: #e5e5e5;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: #7a4d31;
+            border-color: #7a4d31;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, #fdfbf7 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .feature-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Categories */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 16px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cat-img {
+            height: 220px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .cat-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .category-card:hover .cat-img img {
+            transform: scale(1.05);
+        }
+
+        .cat-content {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .cat-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .cat-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Service Process */
+        .process {
+            background: var(--secondary-color);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            position: relative;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: var(--shadow-sm);
+            font-size: 32px;
+            color: var(--primary-color);
+        }
+
+        .step-item h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: var(--text-gray);
+            padding: 0 10px;
+        }
+
+        /* Design Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: var(--white);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .gallery-overlay span {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f9f9f9;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stars {
+            color: #FFC107;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .quote {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ddd;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .author-info p {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* FAQ */
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-gray);
+            font-size: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h2 {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 24px;
+            max-width: 300px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 32px;
+            }
+
+            .hero-features {
+                justify-content: center;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                丽柜 <span>LI GUIGUARD</span>
+            </a>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#categories">产品系列</a></li>
+                    <li><a href="#process">服务流程</a></li>
+                    <li><a href="#cases">设计案例</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="tel:400-123-4567" class="btn btn-outline">免费咨询</a>
+                <div class="mobile-menu-btn" id="menu-btn">☰</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>重塑您的衣橱空间，演绎生活美学</h1>
+                    <p>丽柜专注于高端定制衣柜、衣帽间及全屋家具解决方案。我们以精湛工艺和人性化设计，为您打造独一无二的私人收纳空间。</p>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <h3>免费设计</h3>
+                            <p>专业设计师上门测量</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>环保板材</h3>
+                            <p>E0级标准，健康无醛</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>终身维护</h3>
+                            <p>完善的售后服务体系</p>
+                        </div>
+                    </div>
+                    <div class="cta-group">
+                        <a href="#contact" class="btn btn-primary">预约上门测量</a>
+                        <a href="#cases" class="btn btn-outline" style="margin-left: 10px;">查看设计案例</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/wardrobe123/600/500" alt="现代简约风格衣柜设计">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>15年+</h3>
+                        <p>行业深耕经验</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50,000+</h3>
+                        <p>成功服务案例</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>全国服务网点</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>客户满意度</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>产品系列</h2>
+                    <p>从单柜定制到全屋整装，满足您对生活空间的所有想象</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/closet1/400/300" alt="定制衣柜">
+                        </div>
+                        <div class="cat-content">
+                            <h3>定制衣柜</h3>
+                            <p>卧室衣柜、步入式衣帽间</p>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/kitchen1/400/300" alt="整体橱柜">
+                        </div>
+                        <div class="cat-content">
+                            <h3>整体橱柜</h3>
+                            <p>现代简约、欧式经典风格</p>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/bookshelf1/400/300" alt="书柜定制">
+                        </div>
+                        <div class="cat-content">
+                            <h3>书柜定制</h3>
+                            <p>开放格、掩门、混合收纳</p>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <div class="cat-img">
+                            <img src="https://picsum.photos/seed/bed1/400/300" alt="定制榻榻米">
+                        </div>
+                        <div class="cat-content">
+                            <h3>定制榻榻米</h3>
+                            <p>多功能空间利用方案</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>服务流程</h2>
+                    <p>透明化流程，让您省心、放心、舒心</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-icon">1</div>
+                        <h3>免费咨询</h3>
+                        <p>拨打热线或在线留言，客服为您解答疑问</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">2</div>
+                        <h3>上门测量</h3>
+                        <p>专业设计师上门量房，了解您的具体需求</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">3</div>
+                        <h3>方案设计</h3>
+                        <p>出具3D效果图及报价单，确认设计方案</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">4</div>
+                        <h3>生产安装</h3>
+                        <p>工厂生产，专业团队上门安装调试</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="cases" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>设计案例</h2>
+                    <p>灵感源于生活，设计改变生活</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/homedesign1/600/450" alt="北欧风格客厅衣柜">
+                        <div class="gallery-overlay">
+                            <h3>北欧风现代衣帽间</h3>
+                            <span>100㎡ 三居室</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/homedesign2/600/450" alt="轻奢风格卧室定制">
+                        <div class="gallery-overlay">
+                            <h3>轻奢风卧室定制</h3>
+                            <span>120㎡ 四居室</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/homedesign3/600/450" alt="简约实用书房">
+                        <div class="gallery-overlay">
+                            <h3>极简主义书房设计</h3>
+                            <span>15㎡ 独立空间</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>客户评价</h2>
+                    <p>真实反馈，品质见证</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">“丽柜的设计师非常专业，充分考虑了家里的动线，衣柜做出来比想象中还要大，收纳功能超级强大，推荐！”</p>
+                        <div class="author">
+                            <img src="https://picsum.photos/seed/user1/100/100" alt="用户头像" class="author-avatar">
+                            <div class="author-info">
+                                <h4>张女士</h4>
+                                <p>北京朝阳区业主</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">“板材环保检测报告很正规，安装师傅也很细心，对柜体缝隙处理得很好，整体效果非常满意。”</p>
+                        <div class="author">
+                            <img src="https://picsum.photos/seed/user2/100/100" alt="用户头像" class="author-avatar">
+                            <div class="author-info">
+                                <h4>李先生</h4>
+                                <p>上海浦东新区业主</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★☆</div>
+                        <p class="quote">“从量房到安装全程都很透明，没有隐形消费。颜色和材质跟选样时一模一样，性价比很高。”</p>
+                        <div class="author">
+                            <img src="https://picsum.photos/seed/user3/100/100" alt="用户头像" class="author-avatar">
+                            <div class="author-info">
+                                <h4>王女士</h4>
+                                <p>深圳南山区业主</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>了解更多关于定制的细节</p>
+                </div>
+                <div class="faq">
+                    <div class="faq-item">
+                        <div class="faq-question">定制衣柜需要多长时间？</div>
+                        <div class="faq-answer">从上门测量到生产安装，一般需要30-45天。具体时间根据订单数量和设计复杂程度而定。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">板材环保吗？有检测报告吗？</div>
+                        <div class="faq-answer">丽柜所有板材均达到E0级环保标准，并提供第三方权威机构的甲醛释放量检测报告供您查阅。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如果不满意设计方案可以修改吗？</div>
+                        <div class="faq-answer">当然可以。在效果图确认之前，我们会根据您的反馈进行多轮修改，直到您满意为止。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">质保期是多久？</div>
+                        <div class="faq-answer">我们提供5年质保服务，终身维护。五金配件通常享受更长的质保期。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>丽柜 LI GUIGUARD</h2>
+                    <p>致力于为每个家庭提供高品质、高性价比的定制家居解决方案。让家更有温度，让生活更有品质。</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="微信">W</a>
+                        <a href="#" aria-label="微博">B</a>
+                        <a href="#" aria-label="抖音">D</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="#">定制衣柜</a></li>
+                        <li><a href="#">衣帽间定制</a></li>
+                        <li><a href="#">全屋定制</a></li>
+                        <li><a href="#">橱柜定制</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">设计案例</a></li>
+                        <li><a href="#">施工流程</a></li>
+                        <li><a href="#">环保知识</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>全国服务热线：400-123-4567</li>
+                        <li>商务合作：bd@liguiguard.com</li>
+                        <li>公司地址：中国·某某市家具产业园A栋</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 丽柜家居科技有限公司 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
