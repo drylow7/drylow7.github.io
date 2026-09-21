@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="情续红楼画眉蹙 - 沉浸式红楼梦主题互动体验与诗词鉴赏平台。探索宝黛情感续写，体验画眉深浅的细腻情感，欣赏古典诗词与现代设计的融合。">
+    <meta name="keywords" content="情续红楼画眉蹙,红楼梦续写,画眉深浅,宝黛爱情,红楼梦诗词,古典文学">
+    <title>情续红楼画眉蹙 - 古典文学互动体验与情感续写</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5D4037; /* 深褐，代表古书与木纹 */
+            --secondary-color: #8D6E63; /* 浅褐，代表旧纸 */
+            --accent-color: #D4AF37; /* 鎏金，代表典雅与装饰 */
+            --bg-color: #FDFBF7; /* 米白宣纸色 */
+            --text-color: #3E2723; /* 深墨色 */
+            --card-shadow: 0 4px 12px rgba(62, 39, 35, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Songti SC", "SimSun", "STSong", "Times New Roman", serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: rgba(253, 251, 247, 0.95);
+            border-bottom: 1px solid var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+            margin-right: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(62, 39, 35, 0.6), rgba(62, 39, 35, 0.6)), url('https://picsum.photos/seed/taohualing/1920/1080.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 5px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            font-family: "KaiTi", "STKaiti", serif;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid var(--accent-color);
+            background-color: transparent;
+            color: var(--accent-color);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #bfa044;
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title .divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0 auto;
+        }
+
+        /* 概念介绍区 */
+        .concept {
+            background-color: #fff;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .concept-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--secondary-color);
+        }
+
+        .concept-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .concept-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* 诗词赏析区 */
+        .poetry {
+            background-color: var(--bg-color);
+        }
+
+        .poetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .poetry-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poetry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        .poetry-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .poetry-content {
+            font-family: "KaiTi", "STKaiti", serif;
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .poetry-author {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        /* 情感续写互动区 */
+        .interaction {
+            background-color: #fff;
+        }
+
+        .interaction-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .interaction-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .interaction-text p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+
+        .interaction-visual {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: url('https://picsum.photos/seed/garden/600/400.jpg') center/cover no-repeat;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: var(--card-shadow);
+        }
+
+        .interaction-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(93, 64, 55, 0.2);
+            border-radius: 8px;
+        }
+
+        /* 问答 FAQ */
+        .faq {
+            background-color: var(--bg-color);
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #666;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #d7ccc8;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                width: 100%;
+                display: none;
+                margin-top: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .interaction-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <span>◆</span>情续红楼画眉蹙
+        </a>
+        <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#concept">缘起</a></li>
+                <li><a href="#poetry">诗词</a></li>
+                <li><a href="#interaction">续写</a></li>
+                <li><a href="#faq">问策</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>情续红楼画眉蹙</h1>
+            <p>于残卷断章处，续写宝黛千古情缘；于眉间心上间，描摹深浅画意阑珊。</p>
+            <a href="#interaction" class="btn btn-primary">开启续写之旅</a>
+            <a href="#poetry" class="btn" style="margin-left: 10px;">赏析经典</a>
+        </div>
+    </section>
+
+    <!-- 概念介绍 -->
+    <section id="concept" class="concept">
+        <div class="container">
+            <div class="section-title">
+                <h2>缘起与意境</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <div class="concept-icon">卷</div>
+                    <h3>红楼遗韵</h3>
+                    <p>《红楼梦》作为古典文学的巅峰之作，其悲剧美学与人物命运至今引人深思。本站致力于在尊重原著精神的基础上，探讨人物可能的情感走向与命运归宿。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="concept-icon">黛</div>
+                    <h3>画眉深浅</h3>
+                    <p>“画眉深浅入时无”不仅是对容貌的描绘，更是对情感细腻度的隐喻。我们通过视觉与文字的互动，重现大观园中那份含蓄而深沉的情感交流。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="concept-icon">续</div>
+                    <h3>情缘续写</h3>
+                    <p>基于原著线索，结合现代视角与文学逻辑，为读者提供沉浸式的续写体验与情感分析，让经典在新的语境下焕发生机。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 诗词赏析 -->
+    <section id="poetry" class="poetry">
+        <div class="container">
+            <div class="section-title">
+                <h2>诗词雅集</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="poetry-grid">
+                <div class="poetry-card">
+                    <div class="poetry-title">题帕三绝（其一）</div>
+                    <div class="poetry-content">
+                        真真个，这番情，最销魂。莫道此时心已死，且看眉间画痕深。
+                    </div>
+                    <div class="poetry-author">—— 情续红楼·拟黛玉</div>
+                </div>
+                <div class="poetry-card">
+                    <div class="poetry-title">题帕三绝（其二）</div>
+                    <div class="poetry-content">
+                        痴痴意，乱乱心，泪痕新。纵使相逢应不识，画眉人去月黄昏。
+                    </div>
+                    <div class="poetry-author">—— 情续红楼·拟宝玉</div>
+                </div>
+                <div class="poetry-card">
+                    <div class="poetry-title">题帕三绝（其三）</div>
+                    <div class="poetry-content">
+                        意难平，恨难平，梦难成。只有眉间一点黛，年年岁岁伴君行。
+                    </div>
+                    <div class="poetry-author">—— 情续红楼·拟众姊妹</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 情感续写互动 -->
+    <section id="interaction" class="interaction">
+        <div class="container">
+            <div class="section-title">
+                <h2>续写体验</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="interaction-container">
+                <div class="interaction-text">
+                    <h3>“画眉深浅”的情感叙事</h3>
+                    <p>在《红楼梦》的悲剧结局中，宝黛的爱情令人扼腕。若时光能倒流，若情缘能续，那一抹眉间的深浅，又将如何描绘出他们之间未了的情愫？</p>
+                    <p>本栏目通过互动文本与场景重构，引导读者进入那个特定的时空，去感受那份“心有灵犀一点通”的默契，去体会“情不知所起，一往而深”的执着。</p>
+                    <p>无论是潇湘馆的竹影婆娑，还是怡红院的落花流水，每一处场景都承载着人物内心的波动。我们试图捕捉那些被原著略过的瞬间，用细腻的笔触，续写那段未完的传奇。</p>
+                    <a href="#" class="btn btn-primary">阅读完整篇章</a>
+                </div>
+                <div class="interaction-visual"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问策</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">什么是“情续红楼画眉蹙”？ <span>+</span></div>
+                    <div class="faq-answer">
+                        这是一个以《红楼梦》人物情感为核心，结合现代文学创作与互动体验的文化平台。它旨在通过续写、赏析和互动的形式，延续经典人物的命运与情感脉络。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">内容是否符合原著？ <span>+</span></div>
+                    <div class="faq-answer">
+                        所有续写内容均基于曹雪芹原著的伏笔、人物性格逻辑及悲剧美学基调进行创作，力求在尊重原著精神的前提下，提供合理的情感推演与文学想象。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">如何参与互动续写？ <span>+</span></div>
+                    <div class="faq-answer">
+                        目前我们提供在线阅读与鉴赏体验。未来将开放社区投稿与读者共创功能，欢迎喜爱红学文化的朋友共同参与。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p>情续红楼画眉蹙，致力于古典文学的情感重构与美学传播。</p>
+            </div>
+            <div class="footer-col">
+                <h4>栏目导航</h4>
+                <ul>
+                    <li><a href="#concept">缘起</a></li>
+                    <li><a href="#poetry">诗词</a></li>
+                    <li><a href="#interaction">续写</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关链接</h4>
+                <ul>
+                    <li><a href="#">红楼梦原著</a></li>
+                    <li><a href="#">红学研究</a></li>
+                    <li><a href="#">古典诗词</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 情续红楼画眉蹙. All Rights Reserved. 
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 移动端菜单切换
+    function toggleMenu() {
+        const nav = document.getElementById('main-nav');
+        nav.classList.toggle('active');
+    }
+
+    // FAQ 折叠面板切换
+    function toggleFaq(element) {
+        const item = element.parentElement;
+        item.classList.toggle('active');
+        
+        // 切换加号/减号图标
+        const span = element.querySelector('span');
+        if (item.classList.contains('active')) {
+            span.textContent = '-';
+        } else {
+            span.textContent = '+';
+        }
+    }
+</script>
+
+</body>
+</html>
