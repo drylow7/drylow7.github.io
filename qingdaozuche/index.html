@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="青岛租车网提供青岛本地及全国范围内的租车服务，涵盖经济型、商务型、SUV及豪华车租赁。支持在线预订、自驾游攻略、车辆价格对比及24小时客服支持，是您青岛旅游出行的最佳租车平台。">
+    <meta name="keywords" content="青岛租车,青岛租车网,青岛租车公司,青岛自驾游租车,青岛旅游租车">
+    <title>青岛租车网 - 本地租车服务与自驾游出行指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-dark: #004c99;
+            --accent-color: #ff9900;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-light: #f4f7f6;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        .top-bar {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-size: 14px;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links a {
+            margin-left: 20px;
+            color: #bdc3c7;
+        }
+
+        .top-links a:hover {
+            color: #fff;
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            margin-left: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after, .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 首屏搜索区 */
+        .hero-section {
+            background: linear-gradient(135deg, #0066cc 0%, #004c99 100%);
+            padding: 60px 0;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #e68a00;
+        }
+
+        /* 核心优势 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* 车型展示区 */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+        }
+
+        .section-header .line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .car-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .car-image {
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .car-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .car-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .car-specs {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .car-specs span {
+            display: flex;
+            align-items: center;
+        }
+
+        .car-price {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .price-text {
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .price-text small {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        /* 城市服务 */
+        .city-section {
+            background-color: white;
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .city-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .city-item:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+
+        .city-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #eef4fc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .city-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 60px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .faq-question:hover {
+            background-color: #fcfcfc;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .form-group {
+                width: 100%;
+            }
+
+            .top-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部信息栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span>服务热线：400-888-9999</span>
+            </div>
+            <div class="top-links">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#">帮助中心</a>
+                <a href="#">企业租车</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-main">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color);">
+                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                    <circle cx="7" cy="17" r="2" />
+                    <circle cx="17" cy="17" r="2" />
+                </svg>
+                <span>青岛租车网</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">车型库</a></li>
+                    <li><a href="#">青岛自驾游</a></li>
+                    <li><a href="#">企业用车</a></li>
+                    <li><a href="#">机场接送</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#" class="btn btn-outline">APP下载</a>
+                <a href="#" class="btn btn-primary">立即租车</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏搜索区 -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1 class="hero-title">青岛自驾游，从这里开始</h1>
+            <p class="hero-subtitle">提供青岛本地及全国范围内的租车服务，价格透明，车况优良，自驾无忧</p>
+            
+            <div class="search-box">
+                <div class="form-group">
+                    <label>取车城市</label>
+                    <select>
+                        <option>青岛</option>
+                        <option>北京</option>
+                        <option>上海</option>
+                        <option>广州</option>
+                        <option>深圳</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>取车日期</label>
+                    <input type="date">
+                </div>
+                <div class="form-group">
+                    <label>还车日期</label>
+                    <input type="date">
+                </div>
+                <div class="form-group" style="flex: 0 0 auto; min-width: auto;">
+                    <button class="search-btn">立即查询价格</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="container">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">车辆全险</h3>
+                <p class="feature-desc">赠送车损险、第三者责任险等，涵盖各种驾驶场景，让您出行更安心。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚗</div>
+                <h3 class="feature-title">车况优良</h3>
+                <p class="feature-desc">每日严格保养，定期年检，确保每一辆车都处于最佳状态。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3 class="feature-title">网点覆盖</h3>
+                <p class="feature-desc">青岛市区及各区县均有门店，机场、火车站附近取还车极其方便。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">24小时客服</h3>
+                <p class="feature-desc">全天候在线客服团队，随时解答您的租车疑问，处理突发状况。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门车型 -->
+    <section class="container">
+        <div class="section-header">
+            <h2 class="section-title">热门车型推荐</h2>
+            <p class="section-subtitle">满足商务出行、家庭旅游、长途自驾等多种用车需求</p>
+            <div class="line"></div>
+        </div>
+
+        <div class="car-grid">
+            <!-- 车型卡片 1 -->
+            <article class="car-card">
+                <div class="car-image">
+                    <span class="car-tag">热销</span>
+                    <img src="https://picsum.photos/seed/car1/400/300" alt="大众帕萨特商务车">
+                </div>
+                <div class="car-info">
+                    <h3 class="car-name">大众帕萨特</h3>
+                    <div class="car-specs">
+                        <span>5座</span>
+                        <span>自动挡</span>
+                        <span>燃油</span>
+                    </div>
+                    <div class="car-price">
+                        <div class="price-text">¥180<span>/天</span></div>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">预订</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 车型卡片 2 -->
+            <article class="car-card">
+                <div class="car-image">
+                    <img src="https://picsum.photos/seed/car2/400/300" alt="丰田汉兰达SUV">
+                </div>
+                <div class="car-info">
+                    <h3 class="car-name">丰田汉兰达</h3>
+                    <div class="car-specs">
+                        <span>5/7座</span>
+                        <span>自动挡</span>
+                        <span>混动</span>
+                    </div>
+                    <div class="car-price">
+                        <div class="price-text">¥320<span>/天</span></div>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">预订</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 车型卡片 3 -->
+            <article class="car-card">
+                <div class="car-image">
+                    <span class="car-tag">商务</span>
+                    <img src="https://picsum.photos/seed/car3/400/300" alt="别克GL8商务车">
+                </div>
+                <div class="car-info">
+                    <h3 class="car-name">别克GL8</h3>
+                    <div class="car-specs">
+                        <span>7座</span>
+                        <span>自动挡</span>
+                        <span>商务</span>
+                    </div>
+                    <div class="car-price">
+                        <div class="price-text">¥450<span>/天</span></div>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">预订</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 车型卡片 4 -->
+            <article class="car-card">
+                <div class="car-image">
+                    <img src="https://picsum.photos/seed/car4/400/300" alt="五菱宏光Mini EV">
+                </div>
+                <div class="car-info">
+                    <h3 class="car-name">五菱宏光Mini</h3>
+                    <div class="car-specs">
+                        <span>2座</span>
+                        <span>自动挡</span>
+                        <span>新能源</span>
+                    </div>
+                    <div class="car-price">
+                        <div class="price-text">¥99<span>/天</span></div>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">预订</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 60px;">
+            <a href="#" class="btn btn-outline">查看全部车型</a>
+        </div>
+    </section>
+
+    <!-- 城市服务覆盖 -->
+    <section class="city-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">覆盖全国，服务青岛</h2>
+                <div class="line"></div>
+            </div>
+            <div class="city-grid">
+                <div class="city-item">
+                    <div class="city-icon">QD</div>
+                    <div class="city-name">青岛</div>
+                </div>
+                <div class="city-item">
+                    <div class="city-icon">BJ</div>
+                    <div class="city-name">北京</div>
+                </div>
+                <div class="city-item">
+                    <div class="city-icon">SH</div>
+                    <div class="city-name">上海</div>
+                </div>
+                <div class="city-item">
+                    <div class="city-icon">GZ</div>
+                    <div class="city-name">广州</div>
+                </div>
+                <div class="city-item">
+                    <div class="city-icon">SZ</div>
+                    <div class="city-name">深圳</div>
+                </div>
+                <div class="city-item">
+                    <div class="city-icon">CD</div>
+                    <div class="city-name">成都</div>
+                </div>
+                <div class="city-item">
+                    <div class="city-icon">HZ</div>
+                    <div class="city-name">杭州</div>
+                </div>
+                <div class="city-item">
+                    <div class="city-icon">XD</div>
+                    <div class="city-name">西安</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2 class="section-title">租车常见问题</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">租车需要提供哪些证件？</div>
+            <div class="faq-answer">
+                租车通常需要提供驾驶员的身份证原件、驾驶证原件（需满1年以上驾龄）以及信用卡（用于支付押金和预授权）。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">异地还车需要额外收费吗？</div>
+            <div class="faq-answer">
+                是的，异地还车通常会产生异地还车服务费。具体费用根据取还车城市距离而定，您可以在预订时查看具体价格。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">可以带宠物上车吗？</div>
+            <div class="faq-answer">
+                大多数车型允许携带宠物，但建议提前与客服沟通，并确保车内整洁，以免产生清洁费用。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">车辆发生事故怎么办？</div>
+            <div class="faq-answer">
+                发生事故请立即联系客服和保险公司，切勿擅自移动车辆或破坏现场。我们会协助您进行定损和理赔流程。
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>青岛租车网</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        专注于为青岛及周边地区提供高品质的租车服务。我们致力于打造透明、便捷、安全的租车平台，让您的每一次出行都充满舒适与便利。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">车型大全</a></li>
+                        <li><a href="#">租车攻略</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">预订流程</a></li>
+                        <li><a href="#">取车须知</a></li>
+                        <li><a href="#">还车指南</a></li>
+                        <li><a href="#">投诉建议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-888-9999</li>
+                        <li>邮箱：support@qingdaozuche.com</li>
+                        <li>地址：山东省青岛市市南区香港中路88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 青岛租车网 版权所有 | 鲁ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠交互
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 简单的日期选择器初始化（设置最小日期为明天）
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        
+        const dateInputs = document.querySelectorAll('input[type="date"]');
+        dateInputs.forEach(input => {
+            input.min = tomorrow.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+                      </html>
