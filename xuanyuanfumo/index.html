@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轩辕伏魔录-东方玄幻修仙与神魔传说专题站</title>
+    <meta name="description" content="轩辕伏魔录专题站提供东方玄幻修仙小说、游戏攻略、角色图鉴及同人创作资源。深入解析神魔传说、上古秘闻与修仙境界体系。">
+    <meta name="keywords" content="轩辕伏魔录,玄幻小说,修仙游戏,神魔传说,东方玄幻">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8a1c1c;
+            --secondary-color: #d4af37;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .search-box {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 8px 12px;
+            background: transparent;
+            color: white;
+            outline: none;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/xuanyuan1/1600/900.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ddd;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-block;
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+        }
+
+        /* Character Grid */
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .char-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .char-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .char-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .char-card:hover .char-img {
+            filter: grayscale(0%);
+        }
+
+        .char-info {
+            padding: 20px;
+        }
+
+        .char-name {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .char-title {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .char-desc {
+            font-size: 0.9rem;
+            color: #ccc;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Content Layout */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .article-card:hover {
+            background-color: #383838;
+        }
+
+        .article-thumb {
+            width: 180px;
+            height: 120px;
+            border-radius: 4px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .article-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        /* Sidebar */
+        aside .widget {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        .rank-list {
+            list-style: none;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background-color: #444;
+            color: white;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background-color: #d4af37; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #c0c0c0; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #cd7f32; }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 50px var(--spacing-unit) 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">
+            <span>轩辕</span>伏魔录
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">小说连载</a></li>
+                <li><a href="#">游戏攻略</a></li>
+                <li><a href="#">角色图鉴</a></li>
+                <li><a href="#">论坛社区</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索神魔、功法...">
+            <button>搜索</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>神魔乱世，一剑伏魔</h1>
+            <p>探索《轩辕伏魔录》宏大的东方玄幻世界，见证上古神魔的复苏与人族修士的崛起。这里有最全的剧情解析、角色攻略与同人资源。</p>
+            <a href="#novel" class="btn-primary">开始阅读</a>
+            <a href="#game" class="btn-primary" style="background: transparent; border: 1px solid white; margin-left: 10px;">游戏下载</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="content-layout">
+            <!-- Left Column -->
+            <section class="main-content">
+                
+                <!-- Novel Section -->
+                <section id="novel">
+                    <div class="section-title">
+                        <h2>热门小说连载</h2>
+                    </div>
+                    <div class="article-list">
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/novel1/300/200.jpg" alt="小说封面" class="article-thumb">
+                            <div class="article-content">
+                                <h3><a href="#">第一章：混沌初开，轩辕现世</a></h3>
+                                <div class="article-meta">2023-10-24 | 分类：正史篇 | 浏览：12.5万</div>
+                                <p>天地不仁，以万物为刍狗。上古神魔大战遗留的混沌气息在九州大地上蔓延，年轻的修士李轩辕意外觉醒了传说中的轩辕剑魂...</p>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/novel2/300/200.jpg" alt="小说封面" class="article-thumb">
+                            <div class="article-content">
+                                <h3><a href="#">第五章：魔族入侵，烽火连天</a></h3>
+                                <div class="article-meta">2023-10-22 | 分类：战争篇 | 浏览：10.2万</div>
+                                <p>幽冥界的封印松动，十万魔兵跨过界河，凡人城池接连失守。各大宗门紧急集结，一场关乎人族存亡的浩劫即将拉开序幕。</p>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/novel3/300/200.jpg" alt="小说封面" class="article-thumb">
+                            <div class="article-content">
+                                <h3><a href="#">第十二章：秘境试炼，强者之路</a></h3>
+                                <div class="article-meta">2023-10-20 | 分类：冒险篇 | 浏览：8.9万</div>
+                                <p>为了争夺进入上古秘境的资格，各路英豪齐聚云梦泽。在这里，不仅有妖兽横行，更有失传已久的上古修仙秘法等待有缘人...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="#" class="btn-primary">加载更多章节</a>
+                    </div>
+                </section>
+
+                <!-- Game Section -->
+                <section id="game" style="margin-top: 60px;">
+                    <div class="section-title">
+                        <h2>游戏资料与攻略</h2>
+                    </div>
+                    <div class="article-list">
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/game1/300/200.jpg" alt="游戏攻略" class="article-thumb">
+                            <div class="article-content">
+                                <h3><a href="#">新手入门指南：职业选择与加点推荐</a></h3>
+                                <div class="article-meta">攻略组发布 | 2023-10-18</div>
+                                <p>初入《轩辕伏魔录》，面对剑修、法修、体修三大职业，如何选择适合自己的战斗风格？本文提供详细的职业分析与加点建议。</p>
+                            </div>
+                        </article>
+                        <article class="article-card">
+                            <img src="https://picsum.photos/seed/game2/300/200.jpg" alt="游戏攻略" class="article-thumb">
+                            <div class="article-content">
+                                <h3><a href="#">BOSS战技巧：如何高效击杀饕餮巨兽</a></h3>
+                                <div class="article-meta">高玩经验分享 | 2023-10-15</div>
+                                <p>饕餮巨兽作为副本终极BOSS，拥有强大的吞噬技能。本攻略将从站位、技能躲避及团队配合三个维度，教你轻松通关。</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside>
+                <!-- Hot Characters -->
+                <div class="widget">
+                    <h3>热门角色</h3>
+                    <div class="char-grid">
+                        <div class="char-card">
+                            <img src="https://picsum.photos/seed/char1/200/300.jpg" alt="角色" class="char-img">
+                            <div class="char-info">
+                                <div class="char-name">李轩辕</div>
+                                <div class="char-title">男主角 / 剑修</div>
+                            </div>
+                        </div>
+                        <div class="char-card">
+                            <img src="https://picsum.photos/seed/char2/200/300.jpg" alt="角色" class="char-img">
+                            <div class="char-info">
+                                <div class="char-name">红莲</div>
+                                <div class="char-title">女主角 / 妖族</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ranking List -->
+                <div class="widget">
+                    <h3>点击排行榜</h3>
+                    <ul class="rank-list">
+                        <li><span class="rank-num">1</span><a href="#">轩辕剑魂觉醒之谜</a></li>
+                        <li><span class="rank-num">2</span><a href="#">人族十大修仙宗门</a></li>
+                        <li><span class="rank-num">3</span><a href="#">十大上古凶兽图鉴</a></li>
+                        <li><span class="rank-num">4</span><a href="#">隐藏剧情触发条件</a></li>
+                        <li><span class="rank-num">5</span><a href="#">神装获取全攻略</a></li>
+                    </ul>
+                </div>
+
+                <!-- FAQ -->
+                <div class="widget">
+                    <h3>常见问题</h3>
+                    <div style="font-size: 0.9rem; color: #ccc;">
+                        <p style="margin-bottom: 10px;"><strong>Q: 小说和游戏剧情是否互通？</strong></p>
+                        <p style="margin-bottom: 10px; color: #888;">A: 目前小说剧情与游戏主线剧情基本同步，部分支线任务在游戏中会有特殊演绎。</p>
+                        <p style="margin-bottom: 10px;"><strong>Q: 如何加入同人创作？</strong></p>
+                        <p style="color: #888;">A: 请前往论坛提交审核，通过后即可发布原创文章。</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于轩辕伏魔录</h4>
+            <p style="color: #888; font-size: 0.9rem;">
+                这是一个致力于传播东方玄幻文化的综合平台。我们汇集了经典小说、热门游戏资讯以及活跃的同人创作社区。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#">小说阅读</a></li>
+                <li><a href="#">游戏下载</a></li>
+                <li><a href="#">角色图鉴</a></li>
+                <li><a href="#">用户协议</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <ul>
+                <li>邮箱：contact@xuanyuan.com</li>
+                <li>QQ群：123456789</li>
+                <li>地址：虚拟网络空间</li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 轩辕伏魔录专题站. All Rights Reserved. 本站内容仅供学习交流使用.</p>
+    </div>
+</footer>
+
+</body>
+  </html>
